@@ -30,10 +30,19 @@
     <Compile Include="hanoi.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="map.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="prime.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="printint.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PythonLearn.py" />
+    <Compile Include="yanghui.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
