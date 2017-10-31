@@ -21,6 +21,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Fibonacci.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="for.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="hanoi.py">
       <SubType>Code</SubType>
     </Compile>
