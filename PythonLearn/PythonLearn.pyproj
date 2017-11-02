@@ -24,6 +24,9 @@
     <Compile Include="Fibonacci.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="fileopen.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="for.py">
       <SubType>Code</SubType>
     </Compile>
