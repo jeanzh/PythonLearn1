@@ -1,22 +1,23 @@
-import time, threading
+from multiprocessing import Process, queues
+import os, time, random
 
-# 假定这是你的银行存款:
-balance = 0
+def write(q):
+    print("process to write %s"%os.getpid())
+    for i in ["A","B","c"]:
+        print("put %s to queue"%i)
+        q.put(i)
+        time.sleep(random.random())
 
-def change_it(n):
-    # 先存后取，结果应该为0:
-    global balance
-    balance = balance + n
-    balance = balance - n
-
-def run_thread(n):
-    for i in range(100000):
-        change_it(n)
-
-t1 = threading.Thread(target=run_thread, args=(5,))
-t2 = threading.Thread(target=run_thread, args=(8,))
-t1.start()
-t2.start()
-t1.join()
-t2.join()
-print(balance)
+def read():
+    print("process to read %s"%os.getpid())
+    while True:
+        value=q.get()
+        print("get %s to queue"%value)
+        print(value)
+    pass
+if __name__=="__main__":
+    q=queues.Queue()
+    pw=Process(target=write,args=(q,))
+    pr=Process(target=read,args=(q,))
+    pw.join()
+    pr.terminate()
