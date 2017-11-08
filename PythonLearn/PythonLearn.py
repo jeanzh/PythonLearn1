@@ -1,5 +1,8 @@
-from multiprocessing import Process, queues
+from multiprocessing import Process, Queue
 import os, time, random
+
+
+
 
 def write(q):
     print("process to write %s"%os.getpid())
@@ -16,8 +19,11 @@ def read():
         print(value)
     pass
 if __name__=="__main__":
-    q=queues.Queue()
+    q=Queue()
     pw=Process(target=write,args=(q,))
+  
     pr=Process(target=read,args=(q,))
+    pw.start()
+    pr.start()
     pw.join()
     pr.terminate()

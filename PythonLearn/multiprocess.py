@@ -8,7 +8,7 @@ def longtimetask(name):
     end=time.time()
     print("task %s run %0.2f seconds"%(name,(end-start)))
 
-if __name__=="__main__":
+if __name__=="__multiprocess__":
     print("parents process %s"%os.getpid())
     p=pool.Pool(4)
     for i in range(5):
