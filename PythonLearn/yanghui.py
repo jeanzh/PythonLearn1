@@ -15,5 +15,6 @@ def triangles(max):
             t.insert(i+1,L[i]+L[i+1])
         L=[1]+t+[1]
         max= max-1
-for i in triangles(7):
-    print(i)
+def triangleyang():
+    for i in triangles(7):
+        print(i)

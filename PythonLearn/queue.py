@@ -1,5 +1,5 @@
-from multiprocessing import Process, Queue
-import os, time, random
+#from multiprocessing import Process, Queue
+#import os, time, random
 
 def write(q):
     print("process to write %s"%os.getpid())
@@ -14,7 +14,8 @@ def read(q):
         value=q.get()
         print("get %s to queue"%value)
         print(value)
-if __name__=="__main__":
+    pass
+def myque():
     q=Queue()
     pw=Process(target=write,args=(q,))
   
@@ -23,26 +24,3 @@ if __name__=="__main__":
     pr.start()
     pw.join()
     pr.terminate()
-
-
-
-    # fibonacci
-def fib(num):
-    a=0
-    b=1
-    while num >0:
-        print(b)
-        t=b
-        b=a+b
-        a=t
-        num=num-1
-
-# file open
-
-def openf():
-    pathr="d:\\1.txt"
-    with open(pathr,"r+") as f:
-        print(f.read())
-        f.write('Hello, world111!')
-
-#

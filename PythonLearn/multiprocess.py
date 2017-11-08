@@ -1,5 +1,5 @@
-from multiprocessing import pool
-import os,time,random
+#from multiprocessing import pool
+#import os,time,random
 
 def longtimetask(name):
     print("run task %s (%s)"%(name,os.getpid()))
@@ -8,7 +8,7 @@ def longtimetask(name):
     end=time.time()
     print("task %s run %0.2f seconds"%(name,(end-start)))
 
-if __name__=="__multiprocess__":
+def multipro():
     print("parents process %s"%os.getpid())
     p=pool.Pool(4)
     for i in range(5):

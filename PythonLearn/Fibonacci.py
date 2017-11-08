@@ -7,4 +7,4 @@ def fib(num):
         b=a+b
         a=t
         num=num-1
-fib(16)
+
